@@ -8,7 +8,7 @@ export default function AllList() {
         {name:"Watch Movie",date:"01/01/2025",description:"Martin",priority:"high"}
       ]
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center",marginTop:"1rem" }}>
           <div style={{ overflowX: "auto", borderRadius: "0.5rem", borderWidth: "1px", borderColor: "#E5E7EB" }}>
             <table style={{ borderTopWidth: "2px", borderColor: "#E5E7EB", minWidth: "100%", fontSize: "0.875rem", lineHeight: "1.25rem", backgroundColor: "#ffffff" }}>
               <thead style={{ direction: 'ltr', textAlign: 'left' }}>

@@ -4,16 +4,50 @@
     left: 45%;
     width: 10%;
   }
+
   to {
     top: 1rem;
     left: 1rem;
     width: 4%;
   }
 }
-.logo{
+
+.logo {
   position: relative;
   animation-name: intro;
   animation-duration: 4s;
   animation-fill-mode: forwards;
   /* transform-origin: 50% 50%; */
+}
+
+.navBar {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.inputCard input {
+  border: 1px solid #b4b4b4;
+  outline: 1px solid #b4b4b4;
+  transition: .4s ease-in-out;
+  font-size: medium;
+}
+
+.inputCard input:focus {
+  border: 1px solid #383838;
+  outline: 1px solid #383838;
+}
+
+.inputCard label {
+  position: absolute;
+  left: 3%;
+  top: 15%;
+  transition: .4s ease-in-out;
+  color: gray;
+}
+
+#inputName:focus ~
+#inputLabel {
+  left: 5%;
+  top: -35%;
+  color: #383838;
+  background-color: white;
 }

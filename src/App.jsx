@@ -9,7 +9,7 @@ function App() {
   useEffect(()=>{
     setTimeout(()=>{
       setAnimation(true);
-    },5000)
+    },4500)
   },[])
   
   return (
