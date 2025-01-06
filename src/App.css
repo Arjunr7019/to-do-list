@@ -51,3 +51,20 @@
   color: #383838;
   background-color: white;
 }
+
+#priority{
+  border: 2px solid gray;
+}
+#priority:focus{
+  border: 2px solid #383838;
+}
+#container{
+  position: relative;
+}
+#dropdown{
+  position: absolute;
+  left: 3%;
+  top: -31%;
+  background-color: white;
+  color: #383838;
+}
