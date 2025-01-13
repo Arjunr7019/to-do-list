@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setAnimation(true);
-    }, 4500)
+    }, 2500)
     Services.getTaskData().then(res=>{
       res ? setTaskList(res) : setTaskList();
     })

@@ -15,7 +15,7 @@
 .logo {
   position: relative;
   animation-name: intro;
-  animation-duration: 4s;
+  animation-duration: 2.5s;
   animation-fill-mode: forwards;
   /* transform-origin: 50% 50%; */
 }

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import trash from '../Images/bx-trash.svg';
 
 export default function ToDoListCard({ name, date, description, priority }) {
     const[checked ,setChecked] = useState(false)
@@ -14,8 +15,11 @@ export default function ToDoListCard({ name, date, description, priority }) {
                 </div>
             </td>
             <td>
-                <input type="checkbox" onChange={()=> checked ? setChecked(false): setChecked(true)} />
+                <input style={{cursor:"pointer"}} type="checkbox" onChange={()=> checked ? setChecked(false): setChecked(true)} />
             </td>
+            { checked ? <td style={{cursor:"pointer"}}>
+                <img src={trash} alt="trash-logo" />
+            </td>: <></>}
         </tr>
     )
 }
