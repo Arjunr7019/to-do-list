@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import InputCard from './InputCard';
 import { ListContext } from '../Context/ListContext';
 import Services from '../Services/Services';
+import { Toaster, toast } from 'sonner';
 
 export default function AddTask() {
     const [taskData, setTaskData] = useState({ taskName: "", description: "", date: "", priority: "high" });
@@ -9,15 +10,16 @@ export default function AddTask() {
 
     const AddTask = () => {
         if (taskData.taskName === "" || taskData.description === "" || taskData.date === "") {
-            console.log("inputs are empty")
+            toast.warning('Inputs are Empty')
         } else {
             if (taskList) {
                 let check = taskList.find((task) => task.taskName === taskData.taskName)
-                console.log(check)
+                // console.log(check)
                 if (check) {
-                    console.log("task is already present")
+                    toast.warning('Task is Already Present')
                 } else {
-                    console.log("task added")
+                    // console.log("task added")
+                    toast.success('Task Added')
                     Services.getTaskData().then(res => {
                         let task = res;
                         task.push(taskData);
@@ -26,7 +28,7 @@ export default function AddTask() {
                     })
                 }
             } else {
-                console.log("empty local storage")
+                // console.log("empty local storage")
                 setTaskList([taskData]);
                 Services.setTaskData([taskData])
             }
@@ -55,6 +57,7 @@ export default function AddTask() {
                 </div>
                 <div onClick={() => AddTask()} style={{ width: "50%", margin: "0 0 0 0.3rem", border: "2px solid gray", borderRadius: "1rem", display: "flex", justifyContent: "center", alignItems: "center", cursor: "pointer" }}>Add</div>
             </div>
+            <Toaster position="bottom-center"/>
         </>
     )
 }

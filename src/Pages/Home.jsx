@@ -10,12 +10,12 @@ export default function Home() {
       <NavBar />
       <div style={{padding:"0 1rem"}}>
         <h1>Tasks</h1>
-        <div style={{ display: "flex", flexDirection: "row",width:"100%",justifyContent:"space-around" }}>
+        <div style={{ display: "flex", flexDirection: "row",width:"100%",justifyContent:"start",padding:"0 0 0 2rem" }}>
           <div style={{ width: "50%" }}>
             <h3>Add Task</h3>
             <AddTask />
           </div>
-          <div>
+          <div >
             <h3>Task List</h3>
             <AllList />
           </div>
