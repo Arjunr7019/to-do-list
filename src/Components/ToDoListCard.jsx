@@ -35,17 +35,17 @@ export default function ToDoListCard({ name, date, description, priority, onClic
 
     return (
         <tr style={checked ? { textDecoration: "line-through" } : {}}>
-            <td style={{ paddingTop: "0.5rem", paddingBottom: "0.5rem", paddingLeft: "1rem", paddingRight: "1rem", fontWeight: 500, color: "#111827", whiteSpace: "nowrap" }}>{name}</td>
-            <td style={{ paddingTop: "0.5rem", paddingBottom: "0.5rem", paddingLeft: "1rem", paddingRight: "1rem", color: "#374151", whiteSpace: "nowrap" }}>{date}</td>
-            <td style={{ paddingTop: "0.5rem", paddingBottom: "0.5rem", paddingLeft: "1rem", paddingRight: "1rem", color: "#374151", whiteSpace: "nowrap" }}>
+            <td style={{ padding:"0.5rem", fontWeight: 500, color: "#111827" }}>{name}</td>
+            <td style={{ padding:"0.5rem", color: "#374151" }}>{date}</td>
+            <td style={{ padding:"0.5rem", color: "#374151" }}>
                 {stringChunks.map((chunk, index) => <p key={index} style={{ padding: "0", margin: "0" }}>{chunk}</p>)}
             </td>
-            <td style={{ paddingTop: "0.5rem", paddingBottom: "0.5rem", paddingLeft: "1rem", paddingRight: "1rem", color: "#374151", whiteSpace: "nowrap" }}>
+            <td style={{ padding:"0.5rem", color: "#374151" }}>
                 <div style={priority === "high" ? { paddingX: "2px", borderRadius: "5px", backgroundColor: "#f55e53" } : { paddingX: "2px", borderRadius: "5px", backgroundColor: "#f5ed53" }}>
                     <p style={{ textAlign: "center", color: "white", margin: "0" }}>{priority}</p>
                 </div>
             </td>
-            <td>
+            <td style={{padding:"0.5rem"}}>
                 <input style={{ cursor: "pointer" }} type="checkbox" onChange={() => checked ? setChecked(false) : setChecked(true)} />
             </td>
             {checked ? <td style={{ cursor: "pointer" }} onClick={onClick}>

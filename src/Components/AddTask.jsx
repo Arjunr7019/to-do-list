@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext,useEffect } from 'react';
 import InputCard from './InputCard';
 import { ListContext } from '../Context/ListContext';
 import Services from '../Services/Services';
@@ -7,6 +7,22 @@ import { Toaster, toast } from 'sonner';
 export default function AddTask() {
     const [taskData, setTaskData] = useState({ taskName: "", description: "", date: "", priority: "high" });
     const { taskList, setTaskList } = useContext(ListContext);
+
+    useEffect(() => {
+        let currentDate = new Date();
+        let year = currentDate.getFullYear();
+        let month = currentDate.getMonth();
+        let date = currentDate.getDate();
+        if (month < 10 && date < 10) {
+            setTaskData(val => { return { ...val, date: `${year}-0${month + 1}-0${date}` } })
+        } else if (month < 10) {
+            setTaskData(val => { return { ...val, date: `${year}-0${month + 1}-${date}` } })
+        } else if (date < 10) {
+            setTaskData(val => { return { ...val, date: `${year}-${month + 1}-0${date}` } })
+        } else {
+            setTaskData(val => { return { ...val, date: `${year}-${month + 1}-${date}` } })
+        }
+    }, [])
 
     const AddTask = () => {
         if (taskData.taskName === "" || taskData.description === "" || taskData.date === "") {
@@ -48,7 +64,8 @@ export default function AddTask() {
                 onChange={(e) => setTaskData(val => { return { ...val, date: e.target.value } })} />
             <div style={{ width: "80%", display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                 <div id='container' style={{ width: "50%" }}>
-                    <select onChange={(e) => setTaskData(val => { return { ...val, priority: e.target.value } })} id='priority' style={{ borderRadius: "1rem", padding: "0.5rem 1rem", textAlign: "center", width: "100%" }}>
+                    <select onChange={(e) => setTaskData(val => { return { ...val, priority: e.target.value } })}
+                        id='priority' style={{ borderRadius: "1rem", padding: "0.5rem 1rem", textAlign: "center", width: "100%" }}>
                         <option style={{ textAlign: "start" }} value="high">High</option>
                         <option style={{ textAlign: "start" }} value="medium">Medium</option>
                         <option style={{ textAlign: "start" }} value="low">Low</option>
@@ -57,7 +74,7 @@ export default function AddTask() {
                 </div>
                 <div onClick={() => AddTask()} style={{ width: "50%", margin: "0 0 0 0.3rem", border: "2px solid gray", borderRadius: "1rem", display: "flex", justifyContent: "center", alignItems: "center", cursor: "pointer" }}>Add</div>
             </div>
-            <Toaster position="bottom-center"/>
+            <Toaster position="bottom-center" />
         </>
     )
 }

@@ -2,13 +2,13 @@
   from {
     top: 40%;
     left: 45%;
-    width: 10%;
+    width: 3rem;
   }
 
   to {
-    top: 1rem;
+    top: 0.6rem;
     left: 1rem;
-    width: 4%;
+    width: 2.5rem;
   }
 }
 
@@ -54,6 +54,7 @@
 
 #priority{
   border: 2px solid gray;
+  background-color: white;
 }
 #priority:focus{
   border: 2px solid #383838;

@@ -21,15 +21,15 @@ export default function AllList() {
     })
   },[taskDelete])
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "1rem" }}>
-      <div style={{ overflowX: "auto", borderRadius: "0.5rem", borderWidth: "1px", borderColor: "#E5E7EB" }}>
-        <table style={{ borderTopWidth: "2px", borderColor: "#E5E7EB", minWidth: "100%", fontSize: "0.875rem", lineHeight: "1.25rem", backgroundColor: "#ffffff" }}>
+    <div style={{ display: "flex", justifyContent: "start", alignItems: "center", marginTop: "1rem",width:"100%" }}>
+      <div style={{ borderRadius: "0.5rem", border:"1px solid #E5E7EB",width:"100%" }}>
+        <table style={{ borderRadius: "0.5rem",borderTopWidth: "2px", borderColor: "#E5E7EB",width:"100%", fontSize: "0.875rem", lineHeight: "1.25rem", backgroundColor: "#ffffff" }}>
           <thead style={{ direction: 'ltr', textAlign: 'left' }}>
             <tr>
-              <th style={{ paddingTop: "0.5rem", paddingBottom: "0.5rem", paddingLeft: "1rem", paddingRight: "1rem", fontWeight: 500, color: "#111827", whiteSpace: "nowrap" }}>Task Name</th>
-              <th style={{ paddingTop: "0.5rem", paddingBottom: "0.5rem", paddingLeft: "1rem", paddingRight: "1rem", fontWeight: 500, color: "#111827", whiteSpace: "nowrap" }}>Dead Line</th>
-              <th style={{ paddingTop: "0.5rem", paddingBottom: "0.5rem", paddingLeft: "1rem", paddingRight: "1rem", fontWeight: 500, color: "#111827", whiteSpace: "nowrap" }}>Description</th>
-              <th style={{ paddingTop: "0.5rem", paddingBottom: "0.5rem", paddingLeft: "1rem", paddingRight: "1rem", fontWeight: 500, color: "#111827", whiteSpace: "nowrap" }}>Priority</th>
+              <th style={{ padding:"0.5rem", fontWeight: 500, color: "#111827" }}>Task Name</th>
+              <th style={{ padding:"0.5rem", fontWeight: 500, color: "#111827" }}>Dead Line</th>
+              <th style={{ padding:"0.5rem", fontWeight: 500, color: "#111827" }}>Description</th>
+              <th style={{ padding:"0.5rem", fontWeight: 500, color: "#111827" }}>Priority</th>
             </tr>
           </thead>
 
