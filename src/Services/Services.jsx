@@ -6,7 +6,8 @@ const getTaskData = async()=>{
     return JSON.parse(value);
 }
 
-export default{
+const config = {
     setTaskData,
     getTaskData
 }
+export default config;
